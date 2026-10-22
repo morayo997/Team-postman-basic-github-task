@@ -1,0 +1,98 @@
+{
+  "info": {
+    "_postman_id": "09956ff9-e549-4648-afde-e44d894d4bcb",
+    "name": "API_Testing",
+    "description": "### Welcome to Postman! This is your first collection.\n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests  \n• Test your API in real-world scenarios  \n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59054963",
+    "_collection_link": "https://go.postman.co/collection/59054963-09956ff9-e549-4648-afde-e44d894d4bcb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get data",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code should be 201\", function () {\n    pm.response.to.have.status(200);\npm.test(\"Status code name should have an Ok string\", function () {\n    pm.response.to.have.status(\"OK\");\n});\n});"
+            ]
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "followOriginalHttpMethod": true,
+        "strictSSL": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://demo.fusio-project.org/index.php",
+          "protocol": "https",
+          "host": [
+            "demo",
+            "fusio-project",
+            "org"
+          ],
+          "path": [
+            "index.php"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "APITESTS",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r\npm.test(\"Status code name should have Ok string\", function () {\r\n    pm.response.to.have.status(\"Created\");\r\n});\r\n    pm.response.to.have.status(200);\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://demo.fusio-project.org/index.php",
+          "protocol": "https",
+          "host": [
+            "demo",
+            "fusio-project",
+            "org"
+          ],
+          "path": [
+            "index.php"
+          ]
+        },
+        "description": "A practical step"
+      },
+      "response": []
+    }
+  ]
+}
